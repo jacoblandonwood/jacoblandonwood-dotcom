@@ -23,7 +23,6 @@ window.onload = () => {
   const skippySunglasses = shuffle([
     'img/chill_sunglasses.png',
     'img/eat_sunglasses.png',
-    'img/smile_sunglasses.png',
     'img/dig_sunglasses.png',
     'img/run_sunglasses.png',
     'img/play_sunglasses.png',

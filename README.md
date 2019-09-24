@@ -1,2 +1,0 @@
-# jacoblandonwood-dotcom
-Portfolio Website

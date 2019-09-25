@@ -34,6 +34,10 @@
   position: absolute;
   top: 174px;
   left: -3px;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .image__msg {
@@ -44,6 +48,10 @@
   font-family: 'Kalam', cursive;
   width: 120px;
   font-size: 14px;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .image__jacob-sunglasses {
@@ -95,6 +103,10 @@
   margin-bottom: 0;
 }
 
+.info ul {
+  margin: 0;
+}
+
 .info li {
   font-size: 24px;
   margin-block-start: 1em;
@@ -105,6 +117,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  margin-top: 62px;
+  
 }
 
 .info__links a {

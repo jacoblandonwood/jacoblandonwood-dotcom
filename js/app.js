@@ -30,30 +30,38 @@ window.onload = () => {
     'img/wag_sunglasses.png'
   ]);
 
-  const el = document.getElementsByClassName('image')[0];
+  const image = document.getElementsByClassName('image')[0];
+  let thoughtBubbleVisible = true;
+
   for (let s of jacobSunglasses) {
-    el.innerHTML += `<div class="image__jacob-sunglasses"><img class="image__jacob-sunglasses-img" src="${s.src}"><div class="image__jacob-sunglasses-msg">${s.msg}</div></div>`;
+    image.innerHTML += `<div class="image__jacob-sunglasses"><img class="image__jacob-sunglasses-img" src="${s.src}"><div class="image__jacob-sunglasses-msg">${s.msg}</div></div>`;
   }
   for (let src of skippySunglasses) {
-    el.innerHTML += `<img class="image__skippy-sunglasses" src="${src}" style="transform: rotate(-50deg);">`;
+    image.innerHTML += `<img class="image__skippy-sunglasses" src="${src}" style="transform: rotate(-50deg);">`;
   }
-  
+
   interact('.image__jacob-sunglasses:not(.image__still)').draggable({
     inertia: true,
+    onstart: evt => {
+      evt.target.childNodes[1].style.opacity = 1;
+      if (thoughtBubbleVisible) {
+        thoughtBubbleVisible = false;
+        for (let el of document.querySelectorAll('.image__thought-bubble, .image__msg')) {
+          el.style.opacity = 0;
+        }
+      }
+    },
     onmove: evt => {
       const target = evt.target;
       const x = (parseFloat(target.getAttribute('data-x')) || 0) + evt.dx;
       const y = (parseFloat(target.getAttribute('data-y')) || 0) + evt.dy;
-    
+
       const transform = `translate(${x}px, ${y}px)`;
       target.style.webkitTransform = transform;
       target.style.transform = transform;
-    
+
       target.setAttribute('data-x', x);
       target.setAttribute('data-y', y);
-    },
-    onstart: evt => {
-      evt.target.childNodes[1].style.opacity = '1';
     },
     onend: evt => {
       evt.target.style.opacity = 0;
@@ -63,15 +71,23 @@ window.onload = () => {
 
   interact('.image__skippy-sunglasses').draggable({
     inertia: true,
+    onstart: () => {
+      if (thoughtBubbleVisible) {
+        thoughtBubbleVisible = false;
+        for (let el of document.querySelectorAll('.image__thought-bubble, .image__msg')) {
+          el.style.opacity = 0;
+        }
+      }
+    },
     onmove: evt => {
       const target = evt.target;
       const x = (parseFloat(target.getAttribute('data-x')) || 0) + evt.dx;
       const y = (parseFloat(target.getAttribute('data-y')) || 0) + evt.dy;
-    
+
       const transform = `translate(${x}px, ${y}px) rotate(-50deg)`;
       target.style.webkitTransform = transform;
       target.style.transform = transform;
-    
+
       target.setAttribute('data-x', x);
       target.setAttribute('data-y', y);
     },
@@ -81,4 +97,3 @@ window.onload = () => {
     }
   });
 };
-

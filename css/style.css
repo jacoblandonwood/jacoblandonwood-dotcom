@@ -1,66 +1,122 @@
 #main {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    /* background-image: linear-gradient(to bottom, #003d73, #00487d, #005387, #005e90, #006999, #0075a3, #0081ac, #008db5, #009dc0, #00aec9, #00bfd1, #1ecfd6);
-    background-image: linear-gradient(to top, #003d73, #00487d, #005387, #005e90, #006999, #0075a3, #0081ac, #008db5, #009dc0, #00aec9, #00bfd1, #1ecfd6); */
-    /* background-image: linear-gradient(to bottom, #0878A4, #1ECFD6, #EDD170, #c05640); */
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #324c59;
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 100%;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center;
 }
 
 .image {
-    width: 555px;
-    position: relative;
+  width: 555px;
+  position: relative;
 }
 
 .image__img {
-    width: 100%;
+  width: 100%;
+}
+
+.image__thought-bubble {
+  width: 170px;
+  position: absolute;
+  top: 174px;
+  left: -3px;
+}
+
+.image__msg {
+  position: absolute;
+  top: 191px;
+  left: 32px;
+  color: #324c59;
+  font-family: 'Kalam', cursive;
+  width: 120px;
+  font-size: 14px;
 }
 
 .image__jacob-sunglasses {
-    position: absolute;
-    top: 100px;
-    left: 173px;
-    width: 212px;
-    -webkit-transition: opacity 0.25s ease;
-    -moz-transition: opacity 0.25s ease;
-    -o-transition: opacity 0.25s ease;
-    transition: opacity 0.25s ease;
+  position: absolute;
+  top: 100px;
+  left: 173px;
+  width: 212px;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .image__jacob-sunglasses-msg {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16;
-    font-weight: bold;
-    text-align: center;
-    opacity: 0;
-    -webkit-transition: opacity 0.25s ease;
-    -moz-transition: opacity 0.25s ease;
-    -o-transition: opacity 0.25s ease;
-    transition: opacity 0.25s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 16;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .image__skippy-sunglasses {
-    position: absolute;
-    top: 299px;
-    left: 111px;
-    width: 156px;
-    -webkit-transition: opacity 0.25s ease;
-    -moz-transition: opacity 0.25s ease;
-    -o-transition: opacity 0.25s ease;
-    transition: opacity 0.25s ease;
+  position: absolute;
+  top: 299px;
+  left: 111px;
+  width: 156px;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.info {
+  width: 390px;
+  margin-left: 12px;
+  font-family: 'Kalam', cursive;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.info p {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.info li {
+  font-size: 24px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.info__links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.info__links a {
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+}
+
+.info__links a:hover {
+  transform: scale(1.1);
+}
+
+.info__links svg {
+  fill: white;
 }

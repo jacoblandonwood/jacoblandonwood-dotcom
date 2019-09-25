@@ -125,6 +125,10 @@
   height: 40px;
   width: 40px;
   margin: 0 8px;
+  -webkit-transition: transform 0.25s ease;
+  -moz-transition: transform 0.25s ease;
+  -o-transition: transform 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .info__links a:hover {

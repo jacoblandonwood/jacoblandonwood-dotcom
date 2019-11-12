@@ -59,6 +59,7 @@
   top: 100px;
   left: 173px;
   width: 212px;
+  touch-action: none;
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
   -o-transition: opacity 0.25s ease;
@@ -72,10 +73,6 @@
   font-weight: bold;
   text-align: center;
   opacity: 0;
-  -webkit-transition: opacity 0.25s ease;
-  -moz-transition: opacity 0.25s ease;
-  -o-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease;
 }
 
 .image__skippy-sunglasses {
@@ -83,6 +80,7 @@
   top: 299px;
   left: 111px;
   width: 156px;
+  touch-action: none;
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
   -o-transition: opacity 0.25s ease;
@@ -96,6 +94,7 @@
   color: white;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .info p {
@@ -137,4 +136,10 @@
 
 .info__links svg {
   fill: white;
+}
+
+.info__copyright {
+  position: absolute;
+  bottom: 4px;
+  right: 0;
 }

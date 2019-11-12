@@ -1,4 +1,6 @@
 window.onload = () => {
+  document.getElementsByClassName('info__copyright-year')[0].innerHTML = `${new Date().getFullYear()}`;
+
   const shuffle = arr => {
     for (let i = arr.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
@@ -52,16 +54,15 @@ window.onload = () => {
       }
     },
     onmove: evt => {
-      const target = evt.target;
-      const x = (parseFloat(target.getAttribute('data-x')) || 0) + evt.dx;
-      const y = (parseFloat(target.getAttribute('data-y')) || 0) + evt.dy;
+      const x = (parseFloat(evt.target.getAttribute('data-x')) || 0) + evt.dx;
+      const y = (parseFloat(evt.target.getAttribute('data-y')) || 0) + evt.dy;
 
       const transform = `translate(${x}px, ${y}px)`;
-      target.style.webkitTransform = transform;
-      target.style.transform = transform;
+      evt.target.style.webkitTransform = transform;
+      evt.target.style.transform = transform;
 
-      target.setAttribute('data-x', x);
-      target.setAttribute('data-y', y);
+      evt.target.setAttribute('data-x', x);
+      evt.target.setAttribute('data-y', y);
     },
     onend: evt => {
       evt.target.style.opacity = 0;
